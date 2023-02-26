@@ -41,24 +41,24 @@ def draw_window(red , yellow):
 
 
 def yellow_handle_movement(keys_pressed , yellow):
-    if keys_pressed[pygame.K_w]: #UP
+    if keys_pressed[pygame.K_w] and yellow.y - VEL > -17 : #UP
             yellow.y -=VEL
-    if keys_pressed[pygame.K_a]:   #LEFT
+    if keys_pressed[pygame.K_a] and yellow.x -VEL > 0 :   #LEFT
             yellow.x -= VEL
-    if keys_pressed[pygame.K_d]:   #RIGHT
+    if keys_pressed[pygame.K_d] and yellow.x +VEL + yellow.width -16 < BORDER.x:   #RIGHT
             yellow.x += VEL
-    if keys_pressed[pygame.K_s]:   #DOWN
+    if keys_pressed[pygame.K_s] and yellow.y +VEL + yellow.height -16 < HEIGHT-23:   #DOWN
             yellow.y += VEL
 
 def red_handle_movement(keys_pressed , red):
      
-    if keys_pressed[pygame.K_UP]: #UP
+    if keys_pressed[pygame.K_UP] and red.y - VEL > -17 : #UP
             red.y -=VEL
-    if keys_pressed[pygame.K_LEFT]:   #LEFT
+    if keys_pressed[pygame.K_LEFT] and red.x -VEL > BORDER.x+7 :   #LEFT
             red.x -= VEL
-    if keys_pressed[pygame.K_RIGHT]:   #RIGHT
+    if keys_pressed[pygame.K_RIGHT] and red.x -VEL < WIDTH-red.width+15 :   #RIGHT
             red.x += VEL
-    if keys_pressed[pygame.K_DOWN]:   #DOWN
+    if keys_pressed[pygame.K_DOWN] and red.y +VEL + red.height -16 < HEIGHT-23:   #DOWN
             red.y += VEL
      
 
